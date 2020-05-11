@@ -1,0 +1,333 @@
+.imageCreate {
+    float: left;
+    text-align: center;
+}
+
+.imgCreate {
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.imagesCreate {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesCreate figure:hover img {
+    opacity: .5;
+}
+
+.textCreate {
+    margin-left: 150px;
+    margin-top: 115%;
+    font-weight: bolder;
+}
+
+.imageView {
+    float: right;
+    text-align: center;
+}
+
+.imgView {
+    height: 250px;
+    width: 250px;
+    float: right;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.imagesView {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesView figure:hover img {
+    opacity: .5;
+}
+
+.textView {
+    margin-right: 150px;
+    margin-top: 115%;
+    font-weight: bolder;
+}
+
+#Header {
+    font-family: arial;
+    font-weight: bolder;
+}
+
+#Head {
+    font-family: arial;
+}
+
+#span1 {
+    font-family: cursive;
+    font-weight: bolder;
+    color: deepskyblue;
+}
+
+#span2 {
+    font-family: cursive;
+    font-weight: bolder;
+    color: coral;
+}
+
+#createText {
+    color: cornflowerblue;
+    font-weight: bolder;
+}
+
+.imageCreateMod {
+    float: left;
+    text-align: center;
+}
+
+.imgCreateMod {
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.imagesCreateMod {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesCreateMod figure:hover img {
+    opacity: .5;
+}
+
+.textCreateMod {
+    margin-left: 150px;
+    margin-top: 115%;
+    font-weight: bolder;
+}
+
+.imageCreateStudRec {
+    float: right;
+    text-align: center;
+}
+
+.imgCreateStudRec {
+    height: 250px;
+    width: 250px;
+    float: right;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.imagesCreateStudRec {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesCreateStudRec figure:hover img {
+    opacity: .5;
+}
+
+.textCreateStudRec {
+    margin-right: 150px;
+    margin-top: 115%;
+    font-weight: bolder;
+}
+
+.textHome {
+    background-color: #6c757d;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    float: left
+}
+
+a.textHome:hover {
+    color: deepskyblue;
+    text-decoration: none;
+}
+
+.textModHeader {
+    color: #f1bc19;
+}
+
+.textStudRecHeader {
+    color: #88ae45;
+}
+
+.form-CreateMod {
+    margin: auto;
+    display: block;
+    width: 50%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.createModBtn {
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	background-color:#ffc477;
+	border-radius:6px;
+    border:1px solid #eeb44f;
+    margin: auto;
+	display: block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+.createModBtn:hover {
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	background-color:#fb9e25;
+}
+.createModBtn:active {
+	position:relative;
+	top:1
+}
+
+table#tableModStyle thead{
+    background: #ffc477;
+}
+
+.btnDelete {
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+	background-color:#fe1a00;
+	border-radius:20px;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:2px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.btnDelete:hover {
+	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+	background-color:#ce0100;
+}
+.btnDelete:active {
+	position:relative;
+	top:1px;
+}
+
+.form-CreateStudRec {
+    margin: auto;
+    display: block;
+    width: 35%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.createStudRecBtn {
+	box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #86ae47;
+}
+.createStudRecBtn:hover {
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+.createStudRecBtn:active {
+	position:relative;
+	top:1px;
+}
+
+table#tableStudRecStyle thead{
+    background: #b8e356;
+}
+
+#mod option:first-child{
+	display: none;
+}
+
+#viewText {
+    color: #bc80ea;
+}
+
+.form-instviewProfile {
+    margin: auto;
+    display: block;
+    width: 35%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.instviewProfileBtn {
+	box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+	background-color:#dfbdfa;
+	border-radius:6px;
+	border:1px solid #c584f3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9752cc;
+}
+.instviewProfileBtn:hover {
+	background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+	background-color:#bc80ea;
+}
+.instviewProfileBtn:active {
+	position:relative;
+	top:1px;
+}
+
+table#tableinstviewProfileStyle thead{
+    background: #dfbdfa;
+}

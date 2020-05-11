@@ -1,0 +1,187 @@
+.imageStudentLogin {
+    float: left;
+    text-align: center;
+}
+
+.imgStudentLogin {
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.imagesStudentLogin {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesStudentLogin figure:hover img {
+    opacity: .5;
+}
+
+.textStudentLogin {
+    margin-left: 150px;
+    margin-top: 115%;
+    font-weight: bolder;
+}
+
+.imageInstitution {
+    float: right;
+    text-align: center;
+}
+
+.imgInstitution {
+    height: 250px;
+    width: 250px;
+    float: right;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.imagesInstitution {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesInstitution figure:hover img {
+    opacity: .5;
+}
+
+.textInstitution {
+    margin-right: 150px;
+    margin-top: 115%;
+    font-weight: bolder;
+}
+
+.imageStudent {
+    float: left;
+    text-align: center;
+}
+
+.imgStudent {
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+
+.imagesStudent {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.imagesStudent figure:hover img {
+    opacity: .5;
+}
+
+.textStudent {
+    margin-left: 400px;
+    margin-top: 60%;
+    font-weight: bolder;
+}
+
+.text-center {
+    background-color: white;
+}
+
+.jumbotron {
+    background-color: white;
+}
+
+.imgGraduation {
+    margin: auto;
+    float: left;
+    margin-left: 120px;
+    margin: center;
+}
+
+#navHome {
+    color: aliceblue;
+}
+
+#navReg {
+    color: hotpink;
+}
+
+#navLogin {
+    color: mediumaquamarine;
+}
+
+#navPublic {
+    color: skyblue;
+}
+
+#navLogout {
+    color: greenyellow;
+}
+
+#regText {
+    color: hotpink;
+    font-weight: bolder;
+}
+
+#loginText {
+    color: mediumaquamarine;
+    font-weight: bolder;
+}
+
+#pubText {
+    color: skyblue;
+    font-weight: bolder;
+}
+
+#Header {
+    font-family: arial;
+    font-weight: bolder;
+}
+
+.form-SearchProfile {
+    margin: auto;
+    display: block;
+    width: 35%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.SearchProfileBtn {
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.SearchProfileBtn:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.SearchProfileBtn:active {
+	position:relative;
+	top:1px;
+}
+
+table#tableSearchProfileStyle thead{
+    background: #79bbff;
+}
+
+        
