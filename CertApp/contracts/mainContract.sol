@@ -3,6 +3,7 @@ pragma solidity >=0.4.21 <0.7.0;
 contract mainContract{
     uint public moduleCount = 0;
     uint public recordCount = 0;
+    uint public acCount = 0;
 
     struct Module{
         uint index;
@@ -21,6 +22,13 @@ contract mainContract{
         bool isHidden;
     }
 
+    struct Account{
+        string accountNo;
+        string name;
+    }
+
+    mapping (uint => Account) public accounts;
+
     //Allow us to get Module from code
     mapping (string => uint) codeToIndex;
     mapping (uint => Module) public modules;
@@ -31,6 +39,11 @@ contract mainContract{
         createModule('IT2529', 'Database management systems', 'CM', 4);
         createModule('IT2951', 'Best Module ever', 'CM', 4);
         createRecord('IT2529', 'A', '0123456789');
+    }
+
+    function addAccount(string memory accountNo, string memory name) public{
+        acCount++;
+        accounts[acCount] = Account(accountNo, name);
     }
 
     function createModule(string memory code, string memory description, string memory moduleType, uint credit) public{

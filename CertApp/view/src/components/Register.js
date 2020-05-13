@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import studentIcon from "./studentsIcon.png";
-import institutionIcon from "./institutionIcon.jpg";
 import "./styles.css";
 
 class Register extends Component {

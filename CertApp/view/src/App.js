@@ -17,6 +17,7 @@ import InstitutionCreate from './components/institutions/InstitutionCreate'
 import InstitutionView from './components/institutions/InstitutionView'
 import InstitutionCreateModuleList from './components/institutions/InstitutionCreateModuleList'
 import InstitutionCreateStudentRecord from './components/institutions/InstitutionCreateStudentRecord'
+import StudentView from './components/students/StudentView'
 
 class App extends Component {
   render() {
@@ -40,6 +41,7 @@ class App extends Component {
             <Route exact path="/instView" component={InstitutionView} />
             <Route exact path="/instCreateModList" component={InstitutionCreateModuleList} />
             <Route exact path="/instCreateStudRec" component={InstitutionCreateStudentRecord} />
+            <Route exact path="/studView" component={StudentView} />
           </div>
         </div>
       </Router>

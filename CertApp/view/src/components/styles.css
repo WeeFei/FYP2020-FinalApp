@@ -184,4 +184,20 @@ table#tableSearchProfileStyle thead{
     background: #79bbff;
 }
 
-        
+#studViewHead {
+    font-family: cursive;
+    color: dodgerblue;
+    font-weight: bolder;
+}
+
+.textStudViewHeader {
+    color: #019ad2;
+}
+
+table#tableStudViewStyle thead{
+    background: #33bdef;
+}
+
+table#tableStudViewStyle td{
+    opacity: 1;
+}

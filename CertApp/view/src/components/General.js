@@ -54,7 +54,7 @@ export default class General extends Component {
 
     for(let i = 1; i<= recordCount; i++){
         const record = await contract.methods.records(i).call();
-        if(record[3] === this.state.search)
+        if(record[3] === this.state.search && record[4] !== true)
           records.push(record);
         
     }
