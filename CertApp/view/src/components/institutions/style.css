@@ -331,3 +331,10 @@ table#tableStudRecStyle thead{
 table#tableinstviewProfileStyle thead{
     background: #dfbdfa;
 }
+
+.lb_name {
+    font-family: fantasy;
+    font-size: 30px;
+    color: green;
+    font-weight: bolder;
+}

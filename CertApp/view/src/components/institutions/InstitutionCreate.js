@@ -21,7 +21,7 @@ class InstitutionCreate extends Component {
               <p className="text-center">Please select either Module List or Student Record!</p>
           </div>
           <div className="imageCreateMod">
-          <Link to="/instCreateModList">
+          <Link to="/instCreateModList" onClick={this.forceUpdate}>
             <div className="imagesCreateMod">
             <figure><img className="imgCreateMod" src = {moduleListIcon} alt="Module List Icon"></img></figure>
             </div>
@@ -29,7 +29,7 @@ class InstitutionCreate extends Component {
             <h3 className="textCreateMod"><span>Module List</span></h3>
           </div>
           <div className="imageCreateStudRec">
-          <Link to="/instCreateStudRec">
+          <Link to="/instCreateStudRec" onClick={this.forceUpdate}>
             <div className="imagesCreateStudRec">
             <figure><img className="imgCreateStudRec" src = {studentRecordIcon} alt="Student Record Icon"></img></figure>
             </div>

@@ -6,7 +6,6 @@ import Login from './components/Login'
 import Navbar from './components/Navbar'
 import General from './components/General'
 import Register from './components/Register'
-import StudentGeneralProfile from './components/StudentGeneralProfile'
 import StudentRegister from './components/students/StudentRegister'
 import StudentLogin from './components/students/StudentLogin'
 import StudentProfile from './components/students/StudentProfile'
@@ -18,6 +17,8 @@ import InstitutionView from './components/institutions/InstitutionView'
 import InstitutionCreateModuleList from './components/institutions/InstitutionCreateModuleList'
 import InstitutionCreateStudentRecord from './components/institutions/InstitutionCreateStudentRecord'
 import StudentView from './components/students/StudentView'
+import StudentVerification from './components/students/StudentVerification'
+import StudentVerifyLoad from './components/students/StudentVerifyLoad'
 
 class App extends Component {
   render() {
@@ -30,7 +31,6 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/general" component={General} />
-            <Route exact path="/studentsProfile" component={StudentGeneralProfile} />
             <Route exact path="/studReg" component={StudentRegister} />
             <Route exact path="/studLogin" component={StudentLogin} />
             <Route exact path="/studProfile" component={StudentProfile} />
@@ -42,6 +42,8 @@ class App extends Component {
             <Route exact path="/instCreateModList" component={InstitutionCreateModuleList} />
             <Route exact path="/instCreateStudRec" component={InstitutionCreateStudentRecord} />
             <Route exact path="/studView" component={StudentView} />
+            <Route exact path="/studVerify" component={StudentVerification} />
+            <Route exact path="/studVerifyLoad" component={StudentVerifyLoad} />
           </div>
         </div>
       </Router>

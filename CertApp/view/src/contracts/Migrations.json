@@ -13,8 +13,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x445df0ac"
+      "type": "function"
     },
     {
       "constant": true,
@@ -28,15 +27,13 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x8da5cb5b"
+      "type": "function"
     },
     {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor",
-      "signature": "constructor"
+      "type": "constructor"
     },
     {
       "constant": false,
@@ -50,8 +47,7 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0xfdacd576"
+      "type": "function"
     }
   ],
   "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506101d0806100606000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063445df0ac1461005c5780638da5cb5b14610087578063fdacd576146100de575b600080fd5b34801561006857600080fd5b50610071610119565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b5061009c61011f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100ea57600080fd5b506101176004803603602081101561010157600080fd5b8101908080359060200190929190505050610144565b005b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156101a157806001819055505b5056fea165627a7a723058209b79ad3cc756cee210490943a54ec685f271610a4bbe103304227c2ba0cbbd820029",
@@ -890,12 +886,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xd5FAAC7632e9e779aba1e00E7b649a0c3F38fe78",
-      "transactionHash": "0x34506a1bfe85d3acad28e0590e6fabc0e28c850f2ed3d830e947224e454db217"
+      "address": "0x998B85F366213463856953bb31EDbdbb406AD922",
+      "transactionHash": "0xc389336c75fa1186748b3bfff82c7542a48d51931a33d62132c8af36d6cc4c46"
     }
   },
-  "schemaVersion": "3.0.2",
-  "updatedAt": "2020-05-12T08:24:06.309Z",
+  "schemaVersion": "3.0.22",
+  "updatedAt": "2020-05-13T10:17:12.764Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

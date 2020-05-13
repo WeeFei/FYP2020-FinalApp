@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs')
 const generator = require('generate-password')
 require('dotenv').config();
 const nodemailer = require('nodemailer');
+const alert = require('alert')
 
 const User = require('../model/User')
 users.use(cors())
@@ -53,13 +54,14 @@ users.post('/instReg', (req, res) => {
           User.create(userData)
             .then(user => {
               res.json({ status: user.username + 'Registered!' })
+              alert (user.first_name + ' ' + user.last_name + ' Registered! ' + 'Check your mail for Authentication Password!')
             })
             .catch(err => {
               res.send('error: ' + err)
             })
         })
       } else {
-        res.json({ error: 'User already exists' })
+        alert('User already exists')
       }
     })
     .catch(err => {
@@ -104,16 +106,16 @@ users.post('/instLogin', (req, res) => {
             expiresIn: 1440
             })
             res.send(token)
+            alert('Login Success')
           } else {
-            // Passwords don't match
-            res.json({ error: 'User does not exist' })
+            alert('Authentication Password do not match')
             }
         } else {
-            res.json({ error: 'User does not exist' })
+            alert('Password do not match')
           }
         }
       else {
-        res.json({ error: 'User does not exist' })
+        alert('User does not exist' )
     }
  })
     .catch(err => {
@@ -130,8 +132,6 @@ users.get('/instProfile', (req, res) => {
     .then(user => {
       if (user) {
         res.json(user)
-      } else {
-        res.send('User does not exist')
       }
     })
     .catch(err => {

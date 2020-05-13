@@ -6,7 +6,7 @@ import "./style.css";
 
 class InstitutionCreateStudentRecord extends Component {
 
-  state = { web3: null, accounts: null, contract: null, modules: [], records: [], grades: ["A", "B", "C", "D", "F"], code: '', student: '', grade: ''};
+  state = { web3: null, accounts: null, contract: null, modules: [], records: [], grades: ["A", "B", "C", "D", "F"], code: '', student: '', grade: '', bcAccounts: [], name: ''};
 
   componentDidMount = async () => {
     try {
@@ -38,6 +38,18 @@ class InstitutionCreateStudentRecord extends Component {
     }
   };
 
+async renderAccounts(){
+const {contract} = this.state;
+      const accountCount = await contract.methods.acCount().call();
+      let accounts = [];
+
+      for(let i = 1; i<= accountCount; i++){
+        const account = await contract.methods.accounts(i).call();
+          accounts.push(account);
+    }
+    this.setState({bcAccounts: accounts});
+}
+
   async renderModules(){
     const { contract } = this.state;
     const moduleCount = await contract.methods.moduleCount().call();
@@ -56,6 +68,7 @@ class InstitutionCreateStudentRecord extends Component {
 
   async renderRecords(){
     this.renderModules();
+this.renderAccounts();
     const { contract } = this.state;
     const recordCount = await contract.methods.recordCount().call();
     let records = [];
@@ -76,11 +89,14 @@ class InstitutionCreateStudentRecord extends Component {
     console.log(this.state.code)
   }
 
-  handleChangeStudent(e){
-    this.setState({
+  async handleChangeStudent(e){
+    await this.setState({
       student: e.target.value
     });
-    console.log(this.state.student)
+    const {contract} = this.state;
+    let name = await contract.methods.accountNoToName(this.state.student).call();
+    this.setState({name})
+    console.log(name)
   }
 
   handleChangeGrade(e){
@@ -101,6 +117,7 @@ class InstitutionCreateStudentRecord extends Component {
       this.setState({student: ''});
       this.setState({code: ''});
       this.setState({grade: ''});
+      this.setState({name: ''});
     }
   }
 
@@ -118,7 +135,11 @@ class InstitutionCreateStudentRecord extends Component {
       <div>
         <center>
         <form onSubmit={this.handleSubmit}>
-        <input className="form-CreateStudRec" placeholder="Student Account Number" type="text" value={this.state.student} onChange={this.handleChangeStudent.bind(this)}></input><br></br>
+        <label className="lb_name">{this.state.name}</label>
+        <select className="form-CreateStudRec" value={this.state.student} onChange={this.handleChangeStudent.bind(this)}>
+            <option value="" disabled selected hidden>Select Account Number</option>
+            {this.state.bcAccounts.map((account) => <option key={account.accountNo} value={account.accountNo}>{account.accountNo}</option>)}
+        </select><br></br>
 
         <select id="mod" className="form-CreateStudRec" value={this.state.code} onChange={this.handleChangeModule.bind(this)}>
           {this.state.modules.map((module) => <option key={module.code} value={module.code}>{module.description}</option>)}

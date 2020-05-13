@@ -14,6 +14,7 @@ class StudentProfile extends Component {
       first_name: '',
       last_name: '',
       email: '',
+      accountNumberGen: '',
       errors: {}
     }
   }
@@ -24,7 +25,8 @@ class StudentProfile extends Component {
     this.setState({
       first_name: decoded.first_name,
       last_name: decoded.last_name,
-      email: decoded.email
+      email: decoded.email,
+      accountNumberGen: decoded.accountNumberGen
     })
   }
 
@@ -37,7 +39,7 @@ class StudentProfile extends Component {
             <br></br><br></br>
           </div>
           <div className="imageStudent">
-          <Link to="/studView">
+          <Link to="/studView" onClick={this.forceUpdate}>
             <div className="imagesStudent">
             <figure><img className="imgStudent" src = {studentViewICON} alt="Student View Icon"></img></figure>
             </div>

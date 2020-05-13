@@ -42,7 +42,7 @@ class InstitutionProfile extends Component {
             <br></br><br></br>
           </div>
           <div className="imageCreate">          
-            <Link to="/instCreate">
+            <Link to="/instCreate" onClick={this.forceUpdate}>
               <div className="imagesCreate">
                 <figure><img className="imgCreate" src = {certcreateIcon} alt="Create Icon"></img></figure>
               </div>
@@ -50,7 +50,7 @@ class InstitutionProfile extends Component {
             <h3 className="textCreate"><span>Create</span></h3>
           </div>
           <div className="imageView">
-            <Link to="/instView">
+            <Link to="/instView" onClick={this.forceUpdate}>
               <div className="imagesView">
                 <figure><img className="imgView" src = {certviewIcon} alt="View Icon"></img></figure>
               </div>

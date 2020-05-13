@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs')
 const generator = require('generate-password')
 require('dotenv').config();
 const nodemailer = require('nodemailer');
+const alert = require('alert')
 
 const User = require('../model/User')
 users.use(cors())
@@ -52,13 +53,14 @@ users.post('/studReg', (req, res) => {
           User.create(userData)
             .then(user => {
               res.json({ status: user.username + 'Registered!' })
+              alert(user.first_name + ' ' + user.last_name + ' Registered! ' + 'Check your mail for Account Number!')
             })
             .catch(err => {
               res.send('error: ' + err)
             })
         })
       } else {
-        res.json({ error: 'User already exists' })
+        alert('User already exists')
       }
     })
     .catch(err => {
@@ -96,17 +98,45 @@ users.post('/studLogin', (req, res) => {
             first_name: user.first_name,
             last_name: user.last_name,
             email: user.email,
+            accountNumberGen: user.accountNumberGen
           }
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
             expiresIn: 1440
           })
           res.send(token)
+          alert('Login Success')
         } else {
           // Passwords don't match
-          res.json({ error: 'User does not exist' })
+          alert('Password do not match')
         }
       } else {
-        res.json({ error: 'User does not exist' })
+        alert('User does not exist in database')
+      }
+    })
+    .catch(err => {
+      res.send('error: ' + err)
+    }) 
+})
+
+users.post('/studVerify', (req, res) => {
+  User.findOne({
+    username: req.body.username
+  })
+    .then(user => {
+      if (user) {
+        if (req.body.accountNumberGen === user.accountNumberGen) {
+          // Account Number match
+          console.log("Verification Success")
+          res.json(user)  
+          alert('Verification Success!')
+        } else {
+          // Account Number don't match
+          console.log('Invalid Account Number')
+          alert('Invalid Account Number!')
+        }
+      } else {
+        console.log('Verification Failed')
+        alert('Verification Failed!')
       }
     })
     .catch(err => {
@@ -123,8 +153,22 @@ users.get('/studProfile', (req, res) => {
     .then(user => {
       if (user) {
         res.json(user)
-      } else {
-        res.send('User does not exist')
+      }
+    })
+    .catch(err => {
+      res.send('error: ' + err)
+    })
+})
+
+users.get('/studView', (req, res) => {
+  var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
+
+  User.findOne({
+    username: decoded.username
+  })
+    .then(user => {
+      if (user) {
+        res.json(user)
       }
     })
     .catch(err => {

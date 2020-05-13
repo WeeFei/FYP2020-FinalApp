@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import getWeb3 from "../../getWeb3";
 import mainContract from "../../contracts/mainContract.json";
 import { Link, withRouter } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
+import { decode } from 'jsonwebtoken';
 
 export default class StudentView extends Component {
 
-  state = { web3: null, accounts: null, contract: null, records: []};
+  state = { web3: null, accounts: null, contract: null, records: [], accountNumberGen: ''};
 
   componentDidMount = async () => {
+    const token = localStorage.usertoken
+    const decoded = jwt_decode(token)
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
@@ -25,7 +29,7 @@ export default class StudentView extends Component {
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance }, this.renderRecords);
+      this.setState({ web3, accounts, contract: instance, accountNumberGen: decoded.accountNumberGen }, this.renderRecords);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -42,6 +46,7 @@ export default class StudentView extends Component {
 
     for(let i = 1; i<= recordCount; i++){
         const record = await contract.methods.records(i).call();
+        if (record[3] === this.state.accountNumberGen)
           records.push(record);
         
     }
@@ -60,7 +65,7 @@ export default class StudentView extends Component {
     return (
       <div className="container">
         <div><br></br>
-            <Link to="/instProfile" className="textHome">Home</Link>
+            <Link to="/studProfile" className="textHome">Home</Link>
         </div>
         <center>
         <br></br><br></br><br></br><br></br><br></br>

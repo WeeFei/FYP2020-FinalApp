@@ -41,7 +41,7 @@ class StudentRegister extends Component {
     if (isValid)
 
     studReg(newUser).then(res => {
-      this.props.history.push(`/studLogin`)
+      this.props.history.push(`/studVerifyLoad`)
     })
   }
 
