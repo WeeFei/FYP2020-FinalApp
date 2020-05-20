@@ -338,3 +338,28 @@ table#tableinstviewProfileStyle thead{
     color: green;
     font-weight: bolder;
 }
+
+.textStudentRegister {
+    background-color: orange;
+    font-size: large;
+    font-weight: bolder;
+    color:black;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    float: left
+}
+
+a.textStudentRegister:hover {
+    color: purple;
+    text-decoration: none;
+}
+
+.lb_SSname {
+    font-family: fantasy;
+    font-size: 30px;
+    color: purple;
+    font-weight: bolder;
+}

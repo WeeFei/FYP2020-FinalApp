@@ -2,6 +2,9 @@
 
 import React, { Component } from 'react'
 import { studReg } from './StudentFunctions'
+import { Link, withRouter } from 'react-router-dom';
+import jwt_decode from 'jwt-decode'
+import { decode } from 'jsonwebtoken'
 
 class StudentRegister extends Component {
   constructor() {
@@ -16,11 +19,18 @@ class StudentRegister extends Component {
       last_nameError: '',
       usernameError: '',
       passwordError: '',
-      emailError: '',
     }
 
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    const token = localStorage.usertoken
+    const decoded = jwt_decode(token)
+    this.setState({
+      email: decoded.email,
+    })
   }
 
   onChange(e) {
@@ -36,6 +46,7 @@ class StudentRegister extends Component {
       password: this.state.password,
       email: this.state.email
     }
+    console.log(this.state.email)
 
     const isValid = this.validate()
     if (isValid)
@@ -50,7 +61,6 @@ class StudentRegister extends Component {
     let last_nameError="";
     let usernameError="";
     let passwordError="";
-    let emailError="";
 
     if (!this.state.first_name) {
       first_nameError = 'First Name Cannot Be Blank'
@@ -68,12 +78,8 @@ class StudentRegister extends Component {
       passwordError = 'Password Cannot Be Blank'
     }
 
-    if (!this.state.email.includes('@')) {
-      emailError = 'Invalid Email'
-    }
-
-    if (first_nameError || last_nameError || usernameError || passwordError || emailError) {
-      this.setState({first_nameError, last_nameError, usernameError, passwordError, emailError});
+    if (first_nameError || last_nameError || usernameError || passwordError) {
+      this.setState({first_nameError, last_nameError, usernameError, passwordError});
       return false;
     }
 
@@ -82,7 +88,10 @@ class StudentRegister extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container"><br></br>
+          <div>
+            <Link to="/instProfile" className="textHome">Home</Link>
+          </div>
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>
@@ -144,18 +153,14 @@ class StudentRegister extends Component {
                 {this.state.passwordError}
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email"></label>
                 <input
-                  type="email"
+                  type="hidden"
                   className="form-control"
                   name="email"
-                  placeholder="Enter Email"
                   value={this.state.email}
                   onChange={this.onChange}
                 />
-              </div>
-              <div style={{ color: "red" }}>
-                {this.state.emailError}
               </div>
               <button
                 type="submit"

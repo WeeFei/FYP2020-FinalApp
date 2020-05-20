@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { studVerify } from './StudentFunctions'
 import getWeb3 from "../../getWeb3"
 import mainContract from "../../contracts/mainContract.json"
+import { Link, withRouter } from 'react-router-dom';
 
 class StudentVerification extends Component {
   constructor() {
@@ -117,7 +118,10 @@ class StudentVerification extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container"><br></br>
+      <div>
+        <Link to="/instProfile" className="textHome">Home</Link>
+      </div>
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>

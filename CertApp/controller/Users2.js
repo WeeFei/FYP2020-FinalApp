@@ -32,8 +32,6 @@ users.post('/instReg', (req, res) => {
   const passwordCheck = bcrypt.hashSync(passwordCheckGen, 10)
   const role = "Institution Staff"
   const userData = {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
@@ -45,7 +43,7 @@ users.post('/instReg', (req, res) => {
   }
 
   User.findOne({
-    username: req.body.username
+    institution_name: req.body.institution_name
   })
     .then(user => {
       if (!user) {
@@ -54,14 +52,14 @@ users.post('/instReg', (req, res) => {
           User.create(userData)
             .then(user => {
               res.json({ status: user.username + 'Registered!' })
-              alert (user.first_name + ' ' + user.last_name + ' Registered! ' + 'Check your mail for Authentication Password!')
+              alert (user.username + ' Registered! ' + 'Check your mail for Authentication Password!')
             })
             .catch(err => {
               res.send('error: ' + err)
             })
         })
       } else {
-        alert('User already exists')
+        alert('Institution already exists')
       }
     })
     .catch(err => {
@@ -69,10 +67,10 @@ users.post('/instReg', (req, res) => {
     })
 
     var mailOptions = {
-      from: '"Cert App Dev" <test.certapp@mailbox.org>', // sender address
+      from: '"Cert App Dev" <dev.certapp@mailbox.org>', // sender address
       to: req.body.email, // receiver address
       subject: 'Authentication Password',
-      html: 'Hello <b style="color: #80dfff">' + req.body.first_name + req.body.last_name + ',</b><br>' + 
+      html: 'Hello <b style="color: #80dfff">' + req.body.institution_name + '</b>,<br>' + 
             'Your authentication password for the institution login will be <b style="color: #80ff80">' + passwordCheckGen + '</b><br>' +
             'Please remember this authentication password!'
     }
@@ -97,8 +95,6 @@ users.post('/instLogin', (req, res) => {
           if (bcrypt.compareSync(req.body.passwordCheck, user.passwordCheck)) {
             // Authentication match
             const payload = {
-              first_name: user.first_name,
-              last_name: user.last_name,
               email: user.email,
               institution_name: user.institution_name
             }

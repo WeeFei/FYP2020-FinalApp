@@ -6,7 +6,17 @@ import "./style.css";
 
 class InstitutionCreateStudentRecord extends Component {
 
-  state = { web3: null, accounts: null, contract: null, modules: [], records: [], grades: ["A", "B", "C", "D", "F"], code: '', student: '', grade: '', bcAccounts: [], name: ''};
+  state = { web3: null, 
+            accounts: null,
+            contract: null, 
+            modules: [], 
+            records: [], 
+            grades: ["A", "B", "C", "D", "F"], 
+            code: '', 
+            student: '', 
+            grade: '', 
+            bcAccounts: [], 
+            name: ''};
 
   componentDidMount = async () => {
     try {
@@ -110,8 +120,17 @@ this.renderAccounts();
     e.preventDefault();
 
     if(this.state.code !== '' && this.state.student !== '' && this.state.grade !== ''){
-      console.log('ran');
       const {contract, accounts} = this.state;
+      const recordCount = await contract.methods.recordCount().call();
+    let records = [];
+
+    for(let i = 1; i<= recordCount; i++){
+        const record = await contract.methods.records(i).call();
+        if(record[1] === this.state.code && record[3] === this.state.student){
+            alert('Student Record Already Exist!')
+            return;
+        }
+    }
       await contract.methods.createRecord(this.state.code, this.state.grade, this.state.student).send({from: accounts[0]});
       this.renderRecords();
       this.setState({student: ''});

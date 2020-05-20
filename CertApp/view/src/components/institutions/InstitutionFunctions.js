@@ -5,8 +5,6 @@ import axios from 'axios'
 export const instReg = newUser => {
   return axios
     .post('users/instReg', {
-      first_name: newUser.first_name,
-      last_name: newUser.last_name,
       username: newUser.username,
       password: newUser.password,
       email: newUser.email,

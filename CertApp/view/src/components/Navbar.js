@@ -28,11 +28,6 @@ class Landing extends Component {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/register" className="nav-link" id="navReg" exact activeStyle= { { backgroundColor: 'Gray' } }>
-            Register
-          </NavLink>
-        </li>
-        <li className="nav-item">
           <NavLink to="/general" onClick={this.forceUpdate} className="nav-link" id="navPublic" exact activeStyle= { { backgroundColor: 'Gray' } }>
             General
           </NavLink>

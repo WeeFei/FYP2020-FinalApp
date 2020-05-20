@@ -7,14 +7,10 @@ class InstitutionRegister extends Component {
   constructor() {
     super()
     this.state = {
-      first_name: '',
-      last_name: '',
       username: '',
       password: '',
       email: '',
       institution_name: '',
-      first_nameError: '',
-      last_nameError: '',
       usernameError: '',
       passwordError: '',
       emailError: '',
@@ -32,8 +28,6 @@ class InstitutionRegister extends Component {
     e.preventDefault()
 
     const newUser = {
-      first_name: this.state.first_name,
-      last_name: this.state.last_name,
       username: this.state.username,
       password: this.state.password,
       email: this.state.email,
@@ -49,20 +43,10 @@ class InstitutionRegister extends Component {
   }
 
   validate = () => {
-    let first_nameError="";
-    let last_nameError="";
     let usernameError="";
     let passwordError="";
     let emailError="";
     let institution_nameError="";
-
-    if (!this.state.first_name) {
-      first_nameError = 'First Name Cannot Be Blank'
-    }
-
-    if (!this.state.last_name) {
-      last_nameError = 'Last Name Cannot Be Blank'
-    }
 
     if (!this.state.username) {
       usernameError = 'Username Cannot Be Blank'
@@ -80,8 +64,8 @@ class InstitutionRegister extends Component {
       institution_nameError = 'Institution Name Cannot Be Blank'
     }
 
-    if (first_nameError || last_nameError || usernameError || passwordError || emailError || institution_nameError) {
-      this.setState({first_nameError, last_nameError, usernameError, passwordError, emailError, institution_nameError});
+    if (usernameError || passwordError || emailError || institution_nameError) {
+      this.setState({usernameError, passwordError, emailError, institution_nameError});
       return false;
     }
 
@@ -95,34 +79,6 @@ class InstitutionRegister extends Component {
           <div className="col-md-6 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h2 mb-3" id="Header">Institution Register</h1>
-              <div className="form-group">
-                <label htmlFor="name">First Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="first_name"
-                  placeholder="Enter First Name"
-                  value={this.state.first_name}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {this.state.first_nameError}
-              </div>
-              <div className="form-group">
-                <label htmlFor="name">Last name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="last_name"
-                  placeholder="Enter Last Name"
-                  value={this.state.last_name}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {this.state.last_nameError}
-              </div>
               <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input

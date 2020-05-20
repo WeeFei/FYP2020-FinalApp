@@ -33,12 +33,14 @@ class InstitutionProfile extends Component {
   }
 
   render() {
-
     return (
       <div className="container">
+          <div>
+            <Link to="/studReg" className="textStudentRegister">Student Register</Link>
+          </div>
         <div className="jumbotron mt-5">
         <div className="col-sm-8 mx-auto">
-            <h1 className="text-center" id="Head">Hello <span id="span1">{this.state.first_name}</span> from <span id="span2">{this.state.institution_name}</span></h1>
+            <h1 className="text-center" id="Head">Hello <span id="span1">{this.state.first_name}</span> <span id="span2">{this.state.institution_name}</span></h1>
             <br></br><br></br>
           </div>
           <div className="imageCreate">          
@@ -56,7 +58,7 @@ class InstitutionProfile extends Component {
               </div>
             </Link>
             <h3 className="textView"><span>View</span></h3>
-          </div> 
+          </div>
         </div>
       </div>
     )

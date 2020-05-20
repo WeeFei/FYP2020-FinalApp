@@ -23,13 +23,13 @@ class Login extends Component {
           </Link>
             <h3 className="textStudentLogin"><span>Student</span></h3>
           </div>
-          <div className="imageInstitution">
+          <div className="imageInstitutionLogin">
           <Link to="/instLogin">
-            <div className="imagesInstitution">
-            <figure><img className="imgInstitution" src = {institutionIcon} alt="Institution Icon"></img></figure>
+            <div className="imagesInstitutionLogin">
+            <figure><img className="imgInstitutionLogin" src = {institutionIcon} alt="Institution Icon"></img></figure>
             </div>
           </Link>
-            <h3 className="textInstitution"><span>Institution</span></h3>
+            <h3 className="textInstitutionLogin"><span>Institution</span></h3>
           </div>  
         </div>
       </div>

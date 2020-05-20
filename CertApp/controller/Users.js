@@ -53,7 +53,7 @@ users.post('/studReg', (req, res) => {
           User.create(userData)
             .then(user => {
               res.json({ status: user.username + 'Registered!' })
-              alert(user.first_name + ' ' + user.last_name + ' Registered! ' + 'Check your mail for Account Number!')
+              alert(user.first_name + ' ' + user.last_name + ' Registered! ' + 'Check institution mail for Account Number!')
             })
             .catch(err => {
               res.send('error: ' + err)
@@ -68,12 +68,11 @@ users.post('/studReg', (req, res) => {
     })
 
     var mailOptions = {
-      from: '"Cert App Dev" <test.certapp@mailbox.org>', // sender address
+      from: '"Cert App Dev" <dev.certapp@mailbox.org>', // sender address
       to: req.body.email, // receiver address
       subject: 'Student Account Number',
-      html: 'Hello <b style="color: #80dfff">' + req.body.first_name + req.body.last_name + ',</b><br>' + 
-            'Your student account number is <b style="color: #80ff80">' + accountNumberGen + '</b><br>' +
-            'Please remember this student account number as it serves to let others view your profile!'
+      html: 'Hello,' + '<br>' + 
+            'Student account number for <b style="color: #3451C7">' + req.body.first_name + ' ' + req.body.last_name + '</b>' + ' is ' + '<b style="color: #80ff80">' + accountNumberGen + '</b><br>'
     }
 
     transporter.sendMail(mailOptions, function(error, info) {
